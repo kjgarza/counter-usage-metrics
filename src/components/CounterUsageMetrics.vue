@@ -70,9 +70,9 @@ export default {
     }
   },
   mounted(){
-    if(this.dataInput.size == 0){
+    // if(this.dataInput.size == 0){
       // getMetrics()
-    }
+    // }
   }
 }
 </script>

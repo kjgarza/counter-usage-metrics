@@ -12,40 +12,39 @@ export default {
   data: function(){
     return{
     spec:     
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json",	
-  "description": "A simple bar chart with embedded data.",	
-  "selection": {	
-    "grid": {	
-      "type": "interval", "bind": "scales"	
-    }	
-  },	
-  "data": {	
-        "values": [
-      {"id": "2018-01","sum": 208}, {"id": "2018-02","sum": 232},
-      {"id": "2018-04","sum": 208}, {"id": "2018-05","sum": 400},
-      {"id": "2018-06","sum": 208}, {"id": "2018-09","sum": 235}
-    ]
-  },	
-  "axes": [	
-    { "orient": "bottom", "scale": "xscale", "tickCount": 5},	
-    { "orient": "left", "scale": "yscale", "tickCount": 5, "labelFont":"'Raleway', 'Helvetica', Arial, sans-serif"}	
-  ],  	
-  "mark": 	
-    {	
-      "type": "bar",	
-      "color":"#68B3C8"	
-    }	
-  ,	
-  "width": 500,	
-  "encoding": {	
-    "x": {"field": "id","type": "temporal", "timeUnit":"yearmonth","title": "", "scale": {"domain": ["2017-12", "2019-05"]}, "axis":{"grid":false}},	
-    "y": {"field": "sum", "type": "quantitative", "title": "","scale": {"domain": [0, 500]}},	
-    "tooltip": {"field": "sum", "type": "quantitative"}	
-  }	
-}	
-
-
+        {
+          "$schema": "https://vega.github.io/schema/vega-lite/v3.json",	
+          "description": "A simple bar chart with embedded data.",	
+          "selection": {	
+            "grid": {	
+              "type": "interval", "bind": "scales"	
+            }	
+          },	  
+          "data": {	
+                "values": [
+              {"id": "2018-01-01","sum": 208}, {"id": "2018-02-01","sum": 232},
+              {"id": "2017-04-01","sum": 250}, {"id": "2018-05-01","sum": 400},
+              {"id": "2016-06-01","sum": 38}, {"id": "2018-09-01","sum": 235}
+            ]
+          },	
+          "axes": [	
+            { "orient": "bottom", "scale": "xscale", "tickCount": 5},	
+            { "orient": "left", "scale": "yscale", "tickCount": 5, "labelFont":"'Raleway', 'Helvetica', Arial, sans-serif"}	
+          ],  	
+          "mark": 	
+            {	
+              "type": "bar",	
+              "color":"#68B3C8",
+              "tooltip": {"content": "data"}	
+            }	
+          ,	
+          "width": 500,	
+          "encoding": {	
+            "x": {"field": "id","type": "ordinal", "timeUnit":"yearmonth","title": "ddddss", "axis":{"grid":false}},	
+            "y": {"field": "sum", "type": "quantitative", "title": "ddd"}
+            // "tooltip": {"field": "sum", "type": "quantitative"}	
+          }	
+        }	
     }
   },
   computed: {
@@ -59,9 +58,9 @@ export default {
     }
   },
   mounted(){
-    if(this.dataInput.size == 0){
-      getMetrics()
-    }
+    // if(this.dataInput.size == 0){
+      // getMetrics()
+    // }
   }
 }
 </script>
@@ -70,3 +69,5 @@ export default {
 <style scoped>
 
 </style>
+
+
