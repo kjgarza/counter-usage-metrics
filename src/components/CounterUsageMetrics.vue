@@ -1,5 +1,9 @@
 <template>
   <div class="metrics">
+      <div>
+    <ChartTimeDistribution />
+  </div>
+
   <div class="panel-footer">
     <a class="usage-counts usage-views" v-bind:href=link>
       <div class="fa fa-eye"></div>
@@ -10,12 +14,11 @@
       {{downloads}} Downloads
     </a>
     <a class="usage-counts usage-downloads" v-bind:href=link>
-      <div class="fa fa-download"></div>
+      <div class="fa fa-quote-right"></div>
       {{citations}} Citations
     </a>
 
   </div>
-  <ChartTimeDistribution />
   </div>
 </template>
 
