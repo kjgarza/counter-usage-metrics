@@ -1,7 +1,15 @@
 {
   "name": "counter-usage-metrics",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "Kristian Garza <kj.garza@gmail.com> (https://github.com/kjgarza)",
+  "homepage": "https://github.com/kjgarza/counter-usage-metrics/#README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjgarza/counter-usage-metrics.git"
+  },
+  "license": "MIT",
+  "unpkg": "dist/counter-usage-metrics.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
