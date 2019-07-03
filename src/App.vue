@@ -1,17 +1,18 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CounterUsageMetrics doi="10.25677/10968/570"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import CounterUsageMetrics from './components/CounterUsageMetrics.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    CounterUsageMetrics
   }
 }
 </script>
