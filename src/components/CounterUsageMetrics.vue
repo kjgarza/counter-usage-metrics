@@ -1,7 +1,7 @@
 <template>
   <div class="metrics">
-      <div>
-    <ChartTimeDistribution />
+      <div class="row center">
+    <ChartTimeDistribution v-bind:data-input={dataInputApi} v-bind:doi={doi} />
   </div>
 
   <div class="panel-footer">
@@ -25,6 +25,7 @@
 <script>
 
 import ChartTimeDistribution from './ChartTimeDistribution.vue'
+import axios from 'axios';
 
 export default {
   name: 'CounterUsageMetrics',
@@ -42,10 +43,10 @@ export default {
     doi: {
       type: String,
       required: true,
-      validator: function (value) {
-        return value.match(/^[A-Za-z0-9][-._;()/:A-Za-z0-9]+$/) !== -1
+      // validator: function (value) {
+      //   return value.match(/^[A-Za-z0-9][-._;()/:A-Za-z0-9]+$/) !== -1
 
-      }
+      // }
     },
     display: {
       type: String,
@@ -59,23 +60,60 @@ export default {
     return{
       views: 30,
       downloads: 20,
-      citations: 0
+      citations: 0,
+      sourceId: [],
+      relationTypeId: [],
+      metrics: [],
+      viewsDistribution: [],
+
     }
   },
   computed: {
     link(){
       return "https://search.datacite.org/works/"+this.doi+"#views-tab"
+    },
+    url(){
+      return "https://api.datacite.org/events"
+    },
+    dataInputApi(){
+      return this.viewsDistribution
     }
   },
-  methods: {
-    getMetrics(){
-
+  methods:{
+    getMetrics: function(){
+      axios
+        .get(this.url,
+          {
+          params: {
+            sourceId: this.sourceId,
+            relationTypeId: this.relationTypeId,
+            doi: this.doi,
+            extra: true,
+            size: 0,
+            email: "counter-usage-metrics-component"
+          },
+          headers: {'Accept': 'application/vnd.api+json; version=2'}
+        } )
+        .then(response => {
+          this.metrics = response.data.meta
+          this.reduceMetrics()
+        })
+        .catch(error => {
+          // eslint-disable-next-line
+          console.log(error)
+          this.errored = true
+        })
+        .finally(() => this.loading = false)
+    },
+    reduceMetrics: function(){
+      this.views = this.metrics.doisUsageTypes[0].relationTypes[1].sum
+      this.downloads = this.metrics.doisUsageTypes[0].relationTypes[2].sum
+      this.viewsDistribution = this.metrics.relationTypes[0].yearMonths
     }
   },
-  mounted(){
-    // if(this.dataInput.size == 0){
-      // getMetrics()
-    // }
+  mounted () {
+    this.getMetrics()
+    // console.log(this.metrics)
   }
 }
 </script>

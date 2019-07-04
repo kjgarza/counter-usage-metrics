@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <CounterUsageMetrics doi="10.25677/10968/570"/>
+    <CounterUsageMetrics doi="10.7272/q6g15xs4"/>
   </div>
 </template>
 

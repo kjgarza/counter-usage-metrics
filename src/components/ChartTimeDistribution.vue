@@ -8,11 +8,24 @@
 export default {
   name: 'ChartTimeDistribution',
   props: {
+    doi:{
+      required: true
+    },
+    dataInput:{
+      required: true
+    }
   },
   data: function(){
     return{
-    spec:     
-        {
+      title: "Mychart dot com"
+    }
+  },
+  computed: {
+    link(){
+      return "https://search.datacite.org/works/"+this.doi+"#views-tab"
+    },
+    spec(){
+    return    {
           "$schema": "https://vega.github.io/schema/vega-lite/v3.json",	
           "description": "A simple bar chart with embedded data.",	
           "selection": {	
@@ -21,11 +34,7 @@ export default {
             }	
           },	  
           "data": {	
-                "values": [
-              {"id": "2018-01-01","sum": 208}, {"id": "2018-02-01","sum": 232},
-              {"id": "2017-04-01","sum": 250}, {"id": "2018-05-01","sum": 400},
-              {"id": "2016-06-01","sum": 38}, {"id": "2018-09-01","sum": 235}
-            ]
+                "values": this.dataInput.dataInputApi
           },	
           "axes": [	
             { "orient": "bottom", "scale": "xscale", "tickCount": 5},	
@@ -34,23 +43,16 @@ export default {
           "mark": 	
             {	
               "type": "bar",	
-              "color":"#68B3C8",
               "tooltip": {"content": "data"}	
             }	
           ,	
           "width": 500,	
           "encoding": {	
-            "x": {"field": "id","type": "ordinal", "timeUnit":"yearmonth","title": "ddddss", "axis":{"grid":false}},	
+            "x": {"field": "id","type": "temporal", "timeUnit":"yearmonth","title": "ddddss", "axis":{"grid":false}},	
             "y": {"field": "sum", "type": "quantitative", "title": "ddd"}
             // "tooltip": {"field": "sum", "type": "quantitative"}	
           }	
-        }	
-    }
-  },
-  computed: {
-    link(){
-      return "https://search.datacite.org/works/"+this.doi+"#views-tab"
-    }
+        }	}
   },
   methods: {
     getMetrics(){
