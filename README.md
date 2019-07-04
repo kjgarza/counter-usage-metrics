@@ -1,4 +1,5 @@
 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/kgarza/counter-usage-metrics)
 
 [![npm version](https://badge.fury.io/js/counter-usage-metrics.svg)](https://badge.fury.io/js/counter-usage-metrics)
 [![](https://data.jsdelivr.com/v1/package/npm/counter-usage-metrics/badge)](https://www.jsdelivr.com/package/npm/counter-usage-metrics)
