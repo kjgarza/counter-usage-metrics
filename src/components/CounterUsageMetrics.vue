@@ -1,24 +1,24 @@
 <template>
-  <div class="metrics">
-      <div class="row center">
-    <ChartTimeDistribution v-bind:data-input={dataInputApi} v-bind:doi={doi} />
-  </div>
+  <div class="container-fluid metrics">
+    <div class="panel-header">
+      <ChartTimeDistribution v-bind:data-input={dataInputApi} v-bind:doi={doi} />
+    </div>
+    <div class="panel-footer">
+      <a v-if="views > 0" class="usage-counts usage-views" v-bind:href=link>
+        <div class="fa fa-eye"></div>
+        {{views}} Views
+      </a>
+      <a v-if="downloads > 0" class="usage-counts usage-downloads" v-bind:href=link>
+        <div class="fa fa-download"></div>
+        {{downloads}} Downloads
+      </a>
+      <a v-if="citations > 0"  class="usage-counts usage-downloads" v-bind:href=link>
+        <div class="fa fa-quote-right"></div>
+        <font-awesome-icon icon="user-secret" />
 
-  <div class="panel-footer">
-    <a class="usage-counts usage-views" v-bind:href=link>
-      <div class="fa fa-eye"></div>
-      {{views}} Views
-    </a>
-    <a class="usage-counts usage-downloads" v-bind:href=link>
-      <div class="fa fa-download"></div>
-      {{downloads}} Downloads
-    </a>
-    <a class="usage-counts usage-downloads" v-bind:href=link>
-      <div class="fa fa-quote-right"></div>
-      {{citations}} Citations
-    </a>
-
-  </div>
+        {{citations}} Citations
+      </a>
+    </div>
   </div>
 </template>
 
@@ -58,9 +58,9 @@ export default {
   },
   data: function(){
     return{
-      views: 30,
-      downloads: 20,
-      citations: 0,
+      views: "",
+      downloads: "",
+      citations: "",
       sourceId: [],
       relationTypeId: [],
       metrics: [],
@@ -111,9 +111,8 @@ export default {
       this.viewsDistribution = this.metrics.relationTypes[0].yearMonths
     }
   },
-  mounted () {
+  created () {
     this.getMetrics()
-    // console.log(this.metrics)
   }
 }
 </script>

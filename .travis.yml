@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- node
+cache: npm
+install: 
+  - npm install -g @vue/cli
+  - npm install -g @vue/cli-service-global
+before_deploy: vue build --target wc 'src/components/CounterUsageMetrics.vue'
+deploy:
+  provider: npm
+  email: kj.garza@gmail.com
+  api_key:
+    secure: cB1ej7di26Hj0UFIVibXOo40aldtOa2xNWyHeASaty73rmlhOcDxGlPeALzw9nPFzdwY3U/Cmzb+moCYE7qcgZr8nSVugy3jvPmi5NkhzXVmDhJK4SqjAb3jZfFCtbmEdyY+Dt1JhcbJmCeTk+kSz5zJf/lh69MnJdB9tiOiFwjy1Ux0LJHr+9D9Sd6pRwtCb8jn6TLnhtsQ4WSnHCYp4QAm8T/swKaPLORtR+CbNEbVm5APlnkMOHYj74OT9muEXdOpXYa4teS4DaHSO7CfWY5ITaDSQRjlSDMAaC7tcYmIyyWcty8r7gME84ADUzVDFPyasC0f7nH9fUHB6T2ZdkO9MZ4RL3sY/ljyFsMrtL3+9+FpJc7rh6mQ8Z+jAzaBIZ/5gnFAd4GjFGIY/2g4s7fGU87MqRFgbgdR3VnD5c1ySopzss36UQTSo22QKuZqiYLmqeO3NCQejcNgTYWiLq5KSOAF6hLafybiEWKChYKvqwLs8tEcF9KH5MU/C7xWX+Dkj2/rykVpt/G9omGzma8fGbza68oVzZpfZk90j5SH8ktBEON98p2c968W7vAYMn2uvEJgLI89M7/BJGPxSFboGpd9jtPcuz5u7KxwAcl0xdVdc+r6zSNLfAE9Tw/uDD9cCgVQYdPdZW1ZXaEWm9hvjvp4xwzLeL6g6XJkBK0=
+  on:
+    repo: kjgarza/counter-usage-metrics
+    branch: master
