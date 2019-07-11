@@ -11,6 +11,9 @@ export default {
     doi:{
       required: true
     },
+    chart_enable:{
+      required: false
+    },
     dataInput:{
       required: true
     }
