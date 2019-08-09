@@ -1,18 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <CounterUsageMetrics doi="10.7272/q6g15xs4"/>
+    <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="small"/>
+    <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="medium"/>
+    <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="datacite"/>
   </div>
 </template>
 
 <script>
 
-import CounterUsageMetrics from './components/CounterUsageMetrics.vue'
+import DataCiteMetricsComponent from './components/DataCiteMetricsComponent.vue'
 
 export default {
   name: 'app',
   components: {
-    CounterUsageMetrics
+    DataCiteMetricsComponent
   }
 }
 </script>

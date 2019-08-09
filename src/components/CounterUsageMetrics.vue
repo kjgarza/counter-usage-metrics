@@ -25,94 +25,13 @@
 <script>
 
 import ChartTimeDistribution from './ChartTimeDistribution.vue'
-import axios from 'axios';
+import BaseWidget from './BaseWidget.vue'
 
 export default {
   name: 'CounterUsageMetrics',
+  extends: BaseWidget,
   components:{
     ChartTimeDistribution
-  },
-  props: {
-    dataInput: {
-      type: Array,
-      required: false,
-      validator: function (value) {
-        return value.match(/^[A-Za-z0-9][-._;()/:A-Za-z0-9]+$/) !== -1
-      }
-    },
-    doi: {
-      type: String,
-      required: true,
-      // validator: function (value) {
-      //   return value.match(/^[A-Za-z0-9][-._;()/:A-Za-z0-9]+$/) !== -1
-
-      // }
-    },
-    display: {
-      type: String,
-      required: false,
-      validator: function (value) {
-        return value.match(/^[A-Za-z0-9][-._;()/:A-Za-z0-9]+$/) !== -1
-      }
-    }
-  },
-  data: function(){
-    return{
-      views: "",
-      downloads: "",
-      citations: "",
-      sourceId: [],
-      relationTypeId: [],
-      metrics: [],
-      viewsDistribution: [],
-
-    }
-  },
-  computed: {
-    link(){
-      return "https://search.datacite.org/works/"+this.doi+"#views-tab"
-    },
-    url(){
-      return "https://api.datacite.org/events"
-    },
-    dataInputApi(){
-      return this.viewsDistribution
-    }
-  },
-  methods:{
-    getMetrics: function(){
-      axios
-        .get(this.url,
-          {
-          params: {
-            sourceId: this.sourceId,
-            relationTypeId: this.relationTypeId,
-            doi: this.doi,
-            extra: true,
-            size: 0,
-            email: "counter-usage-metrics-component"
-          },
-          headers: {'Accept': 'application/vnd.api+json; version=2'}
-        } )
-        .then(response => {
-          this.metrics = response.data.meta
-          this.reduceMetrics()
-        })
-        .catch(error => {
-          // eslint-disable-next-line
-          console.log(error)
-          this.errored = true
-        })
-        .finally(() => this.loading = false)
-    },
-    reduceMetrics: function(){
-      this.views = this.metrics.doisUsageTypes[0].relationTypes[1].sum
-      this.downloads = this.metrics.doisUsageTypes[0].relationTypes[2].sum
-      this.viewsDistribution = this.metrics.relationTypes[0].yearMonths
-    }
-  },
-  created () {
-    this.getMetrics()
   }
 }
 </script>
