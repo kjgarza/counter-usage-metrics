@@ -1,5 +1,4 @@
 <template>
-
 </template>
 
 <script>
@@ -89,13 +88,15 @@ export default {
       this.viewsDistribution = this.metrics.relationTypes[0].yearMonths
     }
   },
-  created () {
-    this.getMetrics()
+  watch: {
+    searchText: {
+      handler: 'getMetrics',
+      immediate: true,
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>
