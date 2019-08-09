@@ -1,17 +1,15 @@
 <template>
-  <div class="container-fluid metrics">
-    <div class="panel-footer">
+<div>
       <div v-if="display == 'small'">
-        <SmallWidget v-bind:doi="doi" v-bind:display="display"/>
+        <SmallWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataInput"/>
       </div>
       <div v-if="display == 'medium'">
-        <MediumWidget v-bind:doi="doi" v-bind:display="display"/>
+        <MediumWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataInput"/>
       </div>
       <div v-if="display == 'datacite'">
-        <CounterUsageMetrics v-bind:doi="doi" v-bind:display="display"/>
+        <CounterUsageMetrics v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataInput"/>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -29,20 +27,8 @@ export default {
     SmallWidget
   },
   props: {
-    dataInput: {
-      type: Object,
-      required: false,
-      validator: function (value) {
-        return value.indexOf('views') > -1
-      }
-    },
-    doi: {
-      type: String,
-      required: true,
-      validator: function (value) {
-        return value.match(/^10\.\d{4,5}\/[-\._;()\/:a-zA-Z0-9\*~\$\=]+/)
-      }
-    },
+    dataInput: Object,
+    doi: String,
     display: {
       type: String,
       required: false,

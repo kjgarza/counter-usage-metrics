@@ -4,6 +4,8 @@
     <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="small"/>
     <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="medium"/>
     <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="datacite"/>
+    <DataCiteMetricsComponent doi="10.7272/q6g15xs4"/>
+
   </div>
 </template>
 
