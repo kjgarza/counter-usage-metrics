@@ -16,13 +16,13 @@
 
 <script>
 
-// import BaseWidget from './components/BaseWidget.vue'
 import SmallWidget from './SmallWidget.vue'
 import MediumWidget from './MediumWidget.vue'
 import CounterUsageMetrics from './CounterUsageMetrics.vue'
 
 export default {
   name: 'DataCiteMetricsComponent',
+  funtional: true,
   components:{
     CounterUsageMetrics,
     MediumWidget,
