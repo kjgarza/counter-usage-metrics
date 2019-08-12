@@ -1,6 +1,6 @@
 // vue.config.js
 module.exports = {
   devServer: {
-    proxy: 'https://data.datacite.org/',
+    proxy: 'https://api.datacite.org/',
   }
 }
