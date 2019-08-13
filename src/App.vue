@@ -2,8 +2,13 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="small"/>
+    <br/>
     <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="medium"/>
+    <br/>
+
     <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="datacite"/>
+    <br/>
+
     <DataCiteMetricsComponent doi="10.7272/q6g15xs4"/>
 
   </div>

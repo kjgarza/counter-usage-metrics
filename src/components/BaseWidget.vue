@@ -43,17 +43,24 @@ export default {
       metrics: [],
       viewsDistribution: [],
 
+
     }
   },
   computed: {
     link(){
-      return "https://search.datacite.org/works/"+this.doi+"#views-tab"
+      return "https://search.datacite.org/works/"+this.doi
     },
     url(){
       return "https://api.datacite.org/events"
     },
     dataInputApi(){
       return this.viewsDistribution
+    },
+    alt(){
+      return this.views + " Views from DataCite"
+    },
+    tooltip(){
+      return this.evets.datacite + " from DataCite" + this.evets.crossref + " from Crossref"
     }
   },
   methods:{

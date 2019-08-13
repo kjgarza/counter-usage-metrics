@@ -2,6 +2,7 @@
   <div class="container-fluid metrics">
 
     <div class="panel-footer">
+      <img src="../assets/medium_widget.png" v-bind:alt="this.alt">
       <a v-if="views > 0" class="usage-counts usage-views" v-bind:href=link>
         <div class="fa fa-eye"></div>
         {{views}} Views

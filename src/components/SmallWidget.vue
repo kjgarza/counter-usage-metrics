@@ -1,6 +1,6 @@
 <template>
   <div >
-     <img src="../assets/small_widget.png" alt="1 citation on Dimensions."> {{views}} Views  {{downloads}} Downloads  {{citations}} Citations
+     <img src="../assets/small_widget.png" v-bind:alt="this.alt"> {{views}} Views  {{downloads}} Downloads  {{citations}} Citations
   </div>
 
     <!-- <div >
