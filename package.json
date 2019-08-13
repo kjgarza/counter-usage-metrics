@@ -12,6 +12,7 @@
   },
   "main": "dist/counter-usage-metrics.min.js",
   "dependencies": {
+    "@babel/core": "^7.0.0-0",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",

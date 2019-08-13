@@ -1,10 +1,23 @@
 language: node_js
 node_js:
 - node
+
+env:
+  - WEBPACK_VERSION=4 MOCHA_VERSION=4
+  - WEBPACK_VERSION=4 MOCHA_VERSION=5
+
 cache: npm
 install:
-- npm install -g @vue/cli
-- npm install -g @vue/cli-service-global
+  - npm install -g @vue/cli
+  - npm install -g @vue/cli-service-global
+
+before_script:
+  - "npm install webpack@$WEBPACK_VERSION"
+  - "npm install mocha@$MOCHA_VERSION"
+
+script:
+  - npm test:unit tests
+
 before_deploy: vue build --target wc 'src/components/CounterUsageMetrics.vue'
 deploy:
   provider: npm
