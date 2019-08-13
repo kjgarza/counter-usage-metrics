@@ -37,12 +37,12 @@ TODO: Write a project description
 
 ## Project setup
 ```
-npm install
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
@@ -52,7 +52,7 @@ npm run build
 
 ### Run your tests
 ```
-npm run test
+yarn test:unit tests/
 ```
 
 ### Lints and fixes files

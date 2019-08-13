@@ -1,5 +1,10 @@
 <template>
   <div >
+     <img src="../assets/small_widget.png" alt="1 citation on Dimensions."> {{views}} Views  {{downloads}} Downloads  {{citations}} Citations
+  </div>
+
+    <!-- <div >
+     <img src="../assets/small_widget.png" alt="1 citation on Dimensions.">
     <p>
         {{views}} Views
   </p> <p>
@@ -7,7 +12,7 @@
    </p> <p>
         {{citations}} Citations
     </p>
-  </div>
+  </div> -->
 </template>
 
 <script>
