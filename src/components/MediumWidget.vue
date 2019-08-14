@@ -1,9 +1,8 @@
 <template>
   <div class="container-fluid metrics">
-    <div class="panel-header">
-      <ChartTimeDistribution v-bind:data-input={dataInputApi} v-bind:doi={doi} />
-    </div>
+
     <div class="panel-footer">
+      <img src="../assets/medium_widget.png" v-bind:alt="this.alt">
       <a v-if="views > 0" class="usage-counts usage-views" v-bind:href=link>
         <div class="fa fa-eye"></div>
         {{views}} Views
@@ -24,17 +23,14 @@
 
 <script>
 
-import ChartTimeDistribution from './ChartTimeDistribution.vue'
 import BaseWidget from './BaseWidget.vue'
 
 export default {
-  name: 'CounterUsageMetrics',
-  extends: BaseWidget,
-  components:{
-    ChartTimeDistribution
-  }
+  name: 'MediumWidget',
+  extends: BaseWidget
 }
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
