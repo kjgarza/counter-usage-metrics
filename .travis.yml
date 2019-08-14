@@ -14,9 +14,10 @@ install:
 before_script:
   - "npm install webpack@$WEBPACK_VERSION"
   - "npm install mocha@$MOCHA_VERSION"
+  - yarn add @vue/cli-plugin-unit-mocha
 
 script:
-  - npm test:unit tests
+  - yarn test:unit tests
 
 before_deploy: vue build --target wc 'src/components/CounterUsageMetrics.vue'
 deploy:
