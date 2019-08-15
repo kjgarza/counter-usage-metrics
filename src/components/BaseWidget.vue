@@ -2,10 +2,17 @@
 <script>
 
 import axios from 'axios';
+import viewIcon from '@/assets/viewIcon.svg';
+import downloadIcon from '@/assets/downloadIcon.svg';
+import citationIcon from '@/assets/citationIcon.svg';
+
 
 export default {
   name: 'BaseWidget',
   components:{
+    viewIcon,
+    downloadIcon,
+    citationIcon
   },
   props: {
     dataInput: {
@@ -103,5 +110,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+.icon {
+  width: 17px;
+  height: 17px;
+  /* margin-right: 3px; */
+  display:inline-block;
+}
 </style>

@@ -10,16 +10,15 @@
       </div>
       <div class="col-sm-2">
         <a v-if="views > 0" class="usage-counts usage-views" v-bind:href=link>
-          <div class="fa fa-eye"></div>
+          <viewIcon class="icon" /> 
           {{views}} Views
         </a>
         <a v-if="downloads > 0" class="usage-counts usage-downloads" v-bind:href=link>
-          <div class="fa fa-download"></div>
+          <downloadIcon class="icon" />
           {{downloads}} Downloads
         </a>
         <a v-if="citations > 0" class="usage-counts usage-downloads" v-bind:href=link>
-          <div class="fa fa-quote-right"></div>
-          <font-awesome-icon icon="user-secret" />
+          <citationIcon class="icon" />  
 
           {{citations}} Citations
         </a>
