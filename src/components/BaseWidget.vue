@@ -19,7 +19,8 @@ export default {
       type: Object,
       required: false,
       validator: function (value) {
-        return value.indexOf('views') > -1
+        let keys = Object.keys(value)
+        return ["citations","views","downloads","crossref","datacite"].includes(keys)
       }
     },
     doi: {
@@ -43,12 +44,13 @@ export default {
       views: "",
       downloads: "",
       citations: "",
-      sourceId: [],
+      aggregations: "query_aggregations",
+      sourceId: "datacite-related,datacite-usage,datacite-crossref,crossref",
+      crossref: "",
+      datacite: "",
       relationTypeId: [],
       metrics: [],
-      viewsDistribution: [],
-
-
+      viewsDistribution: []
     }
   },
   computed: {
@@ -70,15 +72,30 @@ export default {
   },
   methods:{
     getMetrics: function(){
+      if(typeof this.dataInput == "undefined"){
+        this.requestMetrics();
+      }else{
+        this.grabMetrics();
+      }
+    },
+    grabMetrics: function(){
+      this.views = this.dataInput.views
+      this.downloads = this.dataInput.downloads
+      this.citations = this.dataInput.citations
+      this.crossref = this.dataInput.crossref
+      this.datacite = this.dataInput.datacite
+    },
+    requestMetrics: function(){
       axios
         .get(this.url,
           {
           params: {
             sourceId: this.sourceId,
             relationTypeId: this.relationTypeId,
+            aggregations: this.aggregations,
             doi: this.doi,
             extra: true,
-            size: 0,
+            'page[size]': 0,
             agent: "datacite-widget"
           },
           headers: {'Accept': 'application/vnd.api+json; version=2'}
@@ -97,11 +114,14 @@ export default {
     reduceMetrics: function(){
       this.views = this.metrics.doisUsageTypes[0].relationTypes[1].sum
       this.downloads = this.metrics.doisUsageTypes[0].relationTypes[2].sum
+      // eslint-disable-next-line
+      console.log(this.metrics)
       this.viewsDistribution = this.metrics.relationTypes[0].yearMonths
+      this.citations = this.metrics.doisCitations.count
     }
   },
   watch: {
-    searchText: {
+    getEvents: {
       handler: 'getMetrics',
       immediate: true,
     }

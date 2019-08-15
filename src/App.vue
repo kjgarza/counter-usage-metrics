@@ -11,6 +11,10 @@
 
     <DataCiteMetricsComponent doi="10.7272/q6g15xs4"/>
 
+    <br/>
+
+    <DataCiteMetricsComponent doi="10.7272/q6g15xs4" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
+
   </div>
 </template>
 
@@ -28,7 +32,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

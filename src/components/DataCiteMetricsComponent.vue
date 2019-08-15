@@ -1,13 +1,13 @@
 <template>
 <div>
       <div v-if="display == 'small'">
-        <SmallWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataInput"/>
+        <SmallWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataObject"/>
       </div>
       <div v-if="display == 'medium'">
-        <MediumWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataInput"/>
+        <MediumWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataObject"/>
       </div>
       <div v-if="display == 'datacite'">
-        <CounterUsageMetrics v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataInput"/>
+        <CounterUsageMetrics v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataObject"/>
       </div>
     </div>
 </template>
@@ -27,7 +27,9 @@ export default {
     SmallWidget
   },
   props: {
-    dataInput: Object,
+    dataInput: {
+      type: String
+    },
     doi: String,
     display: {
       type: String,
@@ -38,6 +40,13 @@ export default {
       default: "small"
     }
   },
+  computed: {
+    dataObject(){
+      if(typeof this.dataInput != "undefined"){
+        return JSON.parse(this.dataInput)
+      }
+    }
+  }
 }
 </script>
 
