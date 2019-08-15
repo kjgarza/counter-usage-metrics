@@ -1,18 +1,16 @@
 <template>
   <div >
-     <img src="../assets/small_widget.png" v-bind:alt="this.alt"> {{views}} Views  {{downloads}} Downloads  {{citations}} Citations
-  </div>
-
-    <!-- <div >
-     <img src="../assets/small_widget.png" alt="1 citation on Dimensions.">
-    <p>
+     <img src="../assets/small_widget.png" v-bind:alt="this.alt"> 
+      <a v-if="views > 0"  v-bind:href=link>
         {{views}} Views
-  </p> <p>
+      </a>
+      <a v-if="downloads > 0" v-bind:href=link>
         {{downloads}} Downloads
-   </p> <p>
+      </a>
+      <a v-if="citations > 0"  v-bind:href=link> 
         {{citations}} Citations
-    </p>
-  </div> -->
+      </a>
+  </div>
 </template>
 
 <script>
@@ -25,7 +23,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 </style>

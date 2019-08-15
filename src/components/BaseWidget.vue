@@ -1,5 +1,3 @@
-<template>
-</template>
 
 <script>
 
@@ -21,7 +19,7 @@ export default {
       type: String,
       required: true,
       validator: function (value) {
-        return value.match(/^10\.\d{4,5}\/[-\._;()\/:a-zA-Z0-9\*~\$\=]+/)
+        return value.match(/^10\.\d{4,5}\/[-._;()/:a-zA-Z0-9*~$=]+/)
       }
     },
     display: {
@@ -57,7 +55,7 @@ export default {
       return this.viewsDistribution
     },
     alt(){
-      return this.views + " Views from DataCite"
+      return Number(this.views) + " Views " + Number(this.downloads) + " Downloads " +  Number(this.citations) + " Citations from DataCite"
     },
     tooltip(){
       return this.evets.datacite + " from DataCite" + this.evets.crossref + " from Crossref"
