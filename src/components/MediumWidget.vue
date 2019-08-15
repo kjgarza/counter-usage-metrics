@@ -1,27 +1,29 @@
 <template>
-  <div class="container-fluid metrics">
+  <div class="metrics">
 
 
-    <div class="row">
-      <div class="col-sm-2">
+    <div class="wrapper">
+      <div>
         <img src="../assets/medium_widget.png" v-bind:alt="this.alt">
       </div>
-      <div class="col-sm-1">
-      </div>
-      <div class="col-sm-2">
+
+      <div>
         <a v-if="views > 0" class="usage-counts usage-views" v-bind:href=link>
           <viewIcon class="icon" /> 
           {{views}} Views
         </a>
+        <br/>
         <a v-if="downloads > 0" class="usage-counts usage-downloads" v-bind:href=link>
           <downloadIcon class="icon" />
           {{downloads}} Downloads
         </a>
+        <br/>
         <a v-if="citations > 0" class="usage-counts usage-downloads" v-bind:href=link>
           <citationIcon class="icon" />  
 
           {{citations}} Citations
         </a>
+        <br/>
       </div>
     </div>
   </div>
@@ -41,6 +43,10 @@ export default {
 
 
 <style scoped>
- /* https://vue-svg-loader.js.org/#example */
+.wrapper {
+  display: grid;
+  text-align: left;
+  grid-template-columns: max-content max-content 5px;
+}
 
 </style>
