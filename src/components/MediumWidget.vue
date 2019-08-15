@@ -2,23 +2,23 @@
   <div class="metrics">
 
 
-    <div class="wrapper">
+    <div class="wrapper" v-bind:title=tooltip>
       <div>
         <img src="../assets/medium_widget.png" v-bind:alt="this.alt">
       </div>
 
       <div>
-        <a v-if="views > 0" class="usage-counts usage-views" v-bind:href=link>
+        <a v-if="views > 0" class="usage-counts usage-views" v-bind:href="link+'#views-tab'">
           <viewIcon class="icon" /> 
           {{views}} Views
         </a>
         <br/>
-        <a v-if="downloads > 0" class="usage-counts usage-downloads" v-bind:href=link>
+        <a v-if="downloads > 0" class="usage-counts usage-downloads" v-bind:href="link+'#downloads-tab'">
           <downloadIcon class="icon" />
           {{downloads}} Downloads
         </a>
         <br/>
-        <a v-if="citations > 0" class="usage-counts usage-downloads" v-bind:href=link>
+        <a v-if="citations > 0" class="usage-counts usage-downloads" v-bind:href="link+'#citations-tab'">
           <citationIcon class="icon" />  
 
           {{citations}} Citations
@@ -46,7 +46,7 @@ export default {
 .wrapper {
   display: grid;
   text-align: left;
-  grid-template-columns: max-content max-content 5px;
+  grid-template-columns: 133px max-content 5px;
 }
 
 </style>

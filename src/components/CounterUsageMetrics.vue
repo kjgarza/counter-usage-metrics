@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid metrics">
+  <div class="container-fluid metrics" v-bind:title=tooltip>
     <div class="panel-header">
       <ChartTimeDistribution v-bind:data-input={dataInputApi} v-bind:doi={doi} />
     </div>

@@ -67,7 +67,7 @@ export default {
       return Number(this.views) + " Views " + Number(this.downloads) + " Downloads " +  Number(this.citations) + " Citations from DataCite"
     },
     tooltip(){
-      return this.evets.datacite + " from DataCite" + this.evets.crossref + " from Crossref"
+      return this.datacite + " from DataCite " + this.crossref + " from Crossref"
     }
   },
   methods:{
@@ -137,4 +137,10 @@ export default {
   /* margin-right: 3px; */
   display:inline-block;
 }
+a{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:'Cairo', "Helvetica", Arial, sans-serif;}
+a{color:#222222;-webkit-transition:all 150ms linear;-moz-transition:all 150ms linear;-o-transition:all 150ms linear;-ms-transition:all 150ms linear;transition:all 150ms linear;text-decoration:none;}
+a:hover,a:focus{color:#222222;text-decoration:none;}
+a:focus,a:active{outline:0;}
+a,a:visited{text-decoration:none;}
+
 </style>
