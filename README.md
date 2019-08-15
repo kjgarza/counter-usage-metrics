@@ -48,6 +48,11 @@ yarn serve
 ### Compiles and minifies for production
 ```
 npm run build
+
+
+yarn build --target wc --name DataCiteMetricsComponent 'src/components/*.vue'
+npm publish
+npm patch version
 ```
 
 ### Run your tests
