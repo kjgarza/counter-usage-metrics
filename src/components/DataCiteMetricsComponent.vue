@@ -7,7 +7,7 @@
         <MediumWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataObject"/>
       </div>
       <div v-if="display == 'datacite'">
-        <CounterUsageMetrics v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataObject"/>
+        <DataCiteWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataObject"/>
       </div>
     </div>
 </template>
@@ -17,6 +17,7 @@
 import SmallWidget from './SmallWidget.vue'
 import MediumWidget from './MediumWidget.vue'
 import CounterUsageMetrics from './CounterUsageMetrics.vue'
+import DataCiteWidget from './DataCiteWidget.vue'
 
 export default {
   name: 'DataCiteMetricsComponent',
@@ -24,7 +25,8 @@ export default {
   components:{
     CounterUsageMetrics,
     MediumWidget,
-    SmallWidget
+    SmallWidget,
+    DataCiteWidget
   },
   props: {
     dataInput: {

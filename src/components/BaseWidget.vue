@@ -67,7 +67,10 @@ export default {
       return Number(this.views) + " Views " + Number(this.downloads) + " Downloads " +  Number(this.citations) + " Citations from DataCite"
     },
     tooltip(){
-      return this.datacite + " from DataCite " + this.crossref + " from Crossref"
+      let message = ""
+      message += this.datacite ? this.datacite + " from DataCite " : ""  
+      message += this.crossref ? this.crossref + " from Crossref" : ""  
+      return  message
     }
   },
   methods:{
@@ -79,11 +82,11 @@ export default {
       }
     },
     grabMetrics: function(){
-      this.views = this.dataInput.views
-      this.downloads = this.dataInput.downloads
-      this.citations = this.dataInput.citations
-      this.crossref = this.dataInput.crossref
-      this.datacite = this.dataInput.datacite
+      this.views = this.dataInput.views || ""
+      this.downloads = this.dataInput.downloads || ""
+      this.citations = this.dataInput.citations || ""
+      this.crossref = this.dataInput.crossref || ""
+      this.datacite = this.dataInput.datacite || ""
     },
     requestMetrics: function(){
       axios
@@ -135,9 +138,10 @@ export default {
   width: 17px;
   height: 17px;
   /* margin-right: 3px; */
+  
   display:inline-block;
 }
-a{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:'Cairo', "Helvetica", Arial, sans-serif;}
+a{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:'Cairo', "Helvetica", Arial, sans-serif;vertical-align:top;}
 a{color:#222222;-webkit-transition:all 150ms linear;-moz-transition:all 150ms linear;-o-transition:all 150ms linear;-ms-transition:all 150ms linear;transition:all 150ms linear;text-decoration:none;}
 a:hover,a:focus{color:#222222;text-decoration:none;}
 a:focus,a:active{outline:0;}
