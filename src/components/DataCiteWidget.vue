@@ -21,10 +21,9 @@ import ChartTimeDistribution from './ChartTimeDistribution.vue'
 import BaseWidget from './BaseWidget.vue'
 
 export default {
-  name: 'CounterUsageMetrics',
+  name: 'DataCiteWidget',
   extends: BaseWidget,
   components:{
-    ChartTimeDistribution
   }
 }
 </script>

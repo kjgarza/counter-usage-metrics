@@ -1,31 +1,31 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="small"/>
+    <DoiMetricsComponent doi="10.7272/q6g15xs4" display="small"/>
     <br/>
-    <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="medium"/>
-    <br/>
-
-    <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="datacite"/>
+    <DoiMetricsComponent doi="10.7272/q6g15xs4" display="medium"/>
     <br/>
 
-    <DataCiteMetricsComponent doi="10.7272/q6g15xs4"/>
+    <DoiMetricsComponent doi="10.7272/q6g15xs4" display="datacite"/>
+    <br/>
+
+    <DoiMetricsComponent doi="10.7272/q6g15xs4"/>
 
     <br/>
 
-    <DataCiteMetricsComponent doi="10.7272/q6g15xs4" display="medium" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
+    <DoiMetricsComponent doi="10.7272/q6g15xs4" display="medium" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
 
   </div>
 </template>
 
 <script>
 
-import DataCiteMetricsComponent from './components/DataCiteMetricsComponent.vue'
+import DoiMetricsComponent from './components/DoiMetricsComponent.vue'
 
 export default {
   name: 'app',
   components: {
-    DataCiteMetricsComponent
+    DoiMetricsComponent
   }
 }
 </script>

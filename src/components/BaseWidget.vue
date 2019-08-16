@@ -20,7 +20,7 @@ export default {
       required: false,
       validator: function (value) {
         let keys = Object.keys(value)
-        return ["citations","views","downloads","crossref","datacite"].includes(keys)
+        return ["citations","views","downloads"].includes(keys)
       }
     },
     doi: {
