@@ -25,5 +25,21 @@ export default {
 </script>
 
 <style scoped>
-  a{font-size: 13px} 
+  a{
+    font-size: 13px;
+    
+        /* display: table-cell; */
+        width: 80px;
+        height: 9px;
+        /* padding: 10px; */
+        /* border: 3px dashed #1c87c9; */
+        vertical-align: middle;
+  }
+
+  .small-badge {
+  width: 100px;  
+  vertical-align: middle;
+
+  /* display:table-cell; */
+}
 </style>

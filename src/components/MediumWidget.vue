@@ -8,7 +8,7 @@
         <mediumBadge class="medium-badge" v-bind:alt="this.alt" /> 
       </div>
 
-      <div>
+      <div class="metrics">
         <a v-if="views > 0" class="usage-counts usage-views" v-bind:href="link+'#views-tab'">
           <viewIcon class="icon" /> 
           {{views}} Views
@@ -48,6 +48,20 @@ export default {
   display: grid;
   text-align: left;
   grid-template-columns: 133px max-content 5px;
+}
+
+.metrics {
+  padding-top: 20px;
+}
+
+.medium-badge {
+  width: 140px;
+  height: 140px;
+  display: block;
+  margin: auto;
+  /* margin-right: 3px; */
+  
+  /* display:inline-block; */
 }
 
 </style>

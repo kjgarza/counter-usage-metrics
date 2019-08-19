@@ -147,18 +147,9 @@ export default {
   display:inline-block;
 }
 
-.small-badge {
-  width: 100px;  
-  display:inline-block;
-}
 
-.medium-badge {
-  width: 160px;
-  height: 160px;
-  /* margin-right: 3px; */
-  
-  display:inline-block;
-}
+
+
 a{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:'Cairo', "Helvetica", Arial, sans-serif;vertical-align:top;}
 a{color:#222222;-webkit-transition:all 150ms linear;-moz-transition:all 150ms linear;-o-transition:all 150ms linear;-ms-transition:all 150ms linear;transition:all 150ms linear;text-decoration:none;}
 a:hover,a:focus{color:#222222;text-decoration:none;}
