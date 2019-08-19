@@ -148,10 +148,7 @@ export default {
 }
 
 .small-badge {
-  width: 100px;
-  /* height: 30px; */
-  /* margin-right: 3px; */
-  
+  width: 100px;  
   display:inline-block;
 }
 
