@@ -1,6 +1,7 @@
 <template>
   <div v-bind:title=tooltip>
-     <img src="../assets/small_widget.png" v-bind:alt="this.alt"> 
+     <!-- <img src="../assets/small_widget.png" v-bind:alt="this.alt">  -->
+     <smallBadge class="small-badge" v-bind:alt="this.alt" />  
       <a v-if="views > 0"  v-bind:href="link+'#views-tab'">
         {{views}} Views
       </a>

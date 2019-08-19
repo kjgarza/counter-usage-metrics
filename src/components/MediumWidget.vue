@@ -4,7 +4,8 @@
 
     <div class="wrapper" v-bind:title=tooltip>
       <div>
-        <img src="../assets/medium_widget.png" v-bind:alt="this.alt">
+        <!-- <img src="../assets/medium_widget.png" v-bind:alt="this.alt"> -->
+        <mediumBadge class="medium-badge" v-bind:alt="this.alt" /> 
       </div>
 
       <div>

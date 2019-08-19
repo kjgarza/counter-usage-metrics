@@ -35,9 +35,7 @@ a.usage-counts{margin-right:1.5em}.nav-tabs.usage{border-bottom:1px solid #ddddd
 
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,400italic,600italic');
-/* @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'); */
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css');
-/* @import url('https://assets.datacite.org/stylesheets/datacite.css'); */
+
 
 
 /*! CSS Used from: Embedded */

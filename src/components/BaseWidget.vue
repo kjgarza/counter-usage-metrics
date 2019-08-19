@@ -5,12 +5,17 @@ import axios from 'axios';
 import viewIcon from '@/assets/viewIcon.svg';
 import downloadIcon from '@/assets/downloadIcon.svg';
 import citationIcon from '@/assets/citationIcon.svg';
+import smallBadge from '@/assets/smallBadge.svg';
+import mediumBadge from '@/assets/mediumBadge.svg';
 
 
 export default {
   name: 'BaseWidget',
   components:{
     viewIcon,
+    downloadIcon,
+    smallBadge,
+    mediumBadge,
     downloadIcon,
     citationIcon
   },
@@ -25,7 +30,7 @@ export default {
     },
     doi: {
       type: String,
-      required: true,
+      required: false,
       validator: function (value) {
         return value.match(/^10\.\d{4,5}\/[-._;()/:a-zA-Z0-9*~$=]+/)
       }
@@ -75,8 +80,8 @@ export default {
   },
   methods:{
     getMetrics: function(){
-      if(typeof this.dataInput == "undefined"){
-        this.requestMetrics();
+      if(typeof this.dataInput == "undefined" && typeof this.doi != "undefined"){
+        this.requestMetrics()
       }else{
         this.grabMetrics();
       }
@@ -137,6 +142,22 @@ export default {
 .icon {
   width: 17px;
   height: 17px;
+  /* margin-right: 3px; */
+  
+  display:inline-block;
+}
+
+.small-badge {
+  width: 100px;
+  /* height: 30px; */
+  /* margin-right: 3px; */
+  
+  display:inline-block;
+}
+
+.medium-badge {
+  width: 160px;
+  height: 160px;
   /* margin-right: 3px; */
   
   display:inline-block;
