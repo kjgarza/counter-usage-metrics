@@ -25,12 +25,12 @@ export default {
       required: false,
       validator: function (value) {
         let keys = Object.keys(value)
-        return ["citations","views","downloads"].includes(keys)
+        return ["citations","views","downloads"].some(r=>keys.includes(r))
       }
     },
     doi: {
       type: String,
-      required: false,
+      required: true,
       validator: function (value) {
         return value.match(/^10\.\d{4,5}\/[-._;()/:a-zA-Z0-9*~$=]+/)
       }

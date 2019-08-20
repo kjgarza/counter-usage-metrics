@@ -32,7 +32,9 @@ export default {
     dataInput: {
       type: String
     },
-    doi: String,
+    doi: {
+      type: String,
+    },
     display: {
       type: String,
       required: false,

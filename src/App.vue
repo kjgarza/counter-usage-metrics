@@ -15,6 +15,10 @@
 
     <DoiMetricsComponent doi="10.7272/q6g15xs4" display="medium" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
 
+    <br/>
+
+    <DoiMetricsComponent doi="" display="small" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
+
   </div>
 </template>
 

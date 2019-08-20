@@ -11,20 +11,20 @@
       <div class="metrics">
         <a v-if="views > 0" class="usage-counts usage-views" v-bind:href="link+'#views-tab'">
           <viewIcon class="icon" /> 
-          {{views}} Views
+          {{views}} Views<br/>
         </a>
-        <br/>
+        
         <a v-if="downloads > 0" class="usage-counts usage-downloads" v-bind:href="link+'#downloads-tab'">
           <downloadIcon class="icon" />
-          {{downloads}} Downloads
+          {{downloads}} Downloads<br/>
         </a>
-        <br/>
+        
         <a v-if="citations > 0" class="usage-counts usage-downloads" v-bind:href="link+'#citations-tab'">
           <citationIcon class="icon" />  
 
-          {{citations}} Citations
+          {{citations}} Citations<br/>
         </a>
-        <br/>
+        
       </div>
     </div>
   </div>
