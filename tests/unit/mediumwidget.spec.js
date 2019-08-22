@@ -6,7 +6,7 @@ describe('MediumWidget.vue', () => {
   it('renders props.msg when passed', () => {
     const doi = '10.7272/q6g15xs4'
     const wrapper = shallowMount(MediumWidget, {
-      propsData: { doi },
+      propsData: { doi }
     })
 
     wrapper.setData({

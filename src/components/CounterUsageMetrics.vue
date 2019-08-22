@@ -4,15 +4,15 @@
       <ChartTimeDistribution v-bind:data-input={dataInputApi} v-bind:doi={doi} />
     </div>
       <a v-if="views > 0" class="usage-counts usage-views" v-bind:href="link+'#views-tab'">
-        <viewIcon class="icon" />  
+        <viewIcon class="icon-metrics" />  
         {{views}} Views
       </a>
       <a v-if="downloads > 0" class="usage-counts usage-downloads" v-bind:href="link+'#downloads-tab'">
-        <downloadIcon class="icon" />
+        <downloadIcon class="icon-metrics" />
         {{downloads}} Downloads
       </a>
       <a v-if="citations > 0"  class="usage-counts usage-downloads" v-bind:href="link+'#citations-tab'">
-        <citationIcon class="icon" />  
+        <citationIcon class="icon-metrics" />  
         {{citations}} Citations
       </a>
   </div>

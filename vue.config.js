@@ -8,8 +8,16 @@ module.exports = {
 
     svgRule.uses.clear();
 
+    // svgRule
+    //   .use('vue-svg-loader')
+    //   .loader('vue-svg-loader');
+    // Edge compatibility
+    // https://github.com/visualfanatic/vue-svg-loader/issues/63#issuecomment-463114598
     svgRule
-      .use('vue-svg-loader')
-      .loader('vue-svg-loader');
+    .use('babel-loader')
+    .loader('babel-loader')
+    .end()
+    .use('vue-svg-loader')
+    .loader('vue-svg-loader')
   },
 }

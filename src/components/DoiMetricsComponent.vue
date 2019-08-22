@@ -33,7 +33,7 @@ export default {
       type: String
     },
     doi: {
-      type: String,
+      type: String
     },
     display: {
       type: String,

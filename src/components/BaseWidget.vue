@@ -16,7 +16,6 @@ export default {
     downloadIcon,
     smallBadge,
     mediumBadge,
-    downloadIcon,
     citationIcon
   },
   props: {
@@ -131,7 +130,7 @@ export default {
   watch: {
     getEvents: {
       handler: 'getMetrics',
-      immediate: true,
+      immediate: true
     }
   }
 }
@@ -139,7 +138,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.icon {
+/* https://stackoverflow.com/questions/12675622/script1028-expected-identifier-string-or-number */
+.icon-metrics {
   width: 17px;
   height: 17px;
   /* margin-right: 3px; */
