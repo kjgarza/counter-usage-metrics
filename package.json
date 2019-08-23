@@ -1,6 +1,6 @@
 {
-  "name": "counter-usage-metrics",
-  "version": "0.1.2",
+  "name": "doi-metrics-component",
+  "version": "0.1.0",
   "private": false,
   "author": "Kristian Garza <kj.garza@gmail.com> (https://github.com/kjgarza)",
   "scripts": {
@@ -10,12 +10,9 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
-  "main": "dist/counter-usage-metrics.min.js",
+  "main": "dist/doi-metrics-component.min.js",
   "dependencies": {
     "@babel/core": "^7.0.0-0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
-    "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "@fortawesome/vue-fontawesome": "^0.1.6",
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
@@ -61,10 +58,10 @@
     "> 1%",
     "last 2 versions"
   ],
-  "homepage": "https://github.com/kjgarza/counter-usage-metrics/#README.md",
+  "homepage": "https://github.com/datacite/spitz/#README.md",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kjgarza/counter-usage-metrics.git"
+    "url": "git+https://github.com/datacite/spitz.git"
   }
 }
