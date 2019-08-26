@@ -16,14 +16,12 @@
 
 import SmallWidget from './SmallWidget.vue'
 import MediumWidget from './MediumWidget.vue'
-import CounterUsageMetrics from './CounterUsageMetrics.vue'
 import DataCiteWidget from './DataCiteWidget.vue'
 
 export default {
   name: 'DataMetricsBadge',
   funtional: true,
   components:{
-    CounterUsageMetrics,
     MediumWidget,
     SmallWidget,
     DataCiteWidget
@@ -49,6 +47,7 @@ export default {
       if(typeof this.dataInput != "undefined"){
         return JSON.parse(this.dataInput)
       }
+      return null
     }
   }
 }

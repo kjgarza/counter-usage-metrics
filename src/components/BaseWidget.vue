@@ -79,7 +79,7 @@ export default {
   },
   methods:{
     getMetrics: function(){
-      if(typeof this.dataInput == "undefined" && typeof this.doi != "undefined"){
+      if(this.dataInput == null && typeof this.doi != "undefined"){
         this.requestMetrics()
       }else{
         this.grabMetrics();
