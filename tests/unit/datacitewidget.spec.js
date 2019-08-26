@@ -9,10 +9,14 @@ describe('DataCiteWidget.vue', () => {
       propsData: { doi }
     })
 
+    wrapper.setData({
+      views: 30
+   })
+
     // eslint-disable-next-line
     console.log(wrapper.html());
 
-    expect(wrapper.find('p').text()).to.include("Views")
+    expect(wrapper.find('a').text()).to.include("Views")
   })
 
 

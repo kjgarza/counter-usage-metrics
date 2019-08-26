@@ -19,7 +19,7 @@ describe('MediumWidget.vue', () => {
 
     // eslint-disable-next-line
     console.log(wrapper.html());
-    expect(wrapper.classes()).to.include('container-fluid')
+    expect(wrapper.classes()).to.include('metrics')
     expect(wrapper.find('.usage-downloads').text()).to.include('30 Downloads')
 
 
