@@ -1,30 +1,25 @@
 language: node_js
 node_js:
 - node
-
 env:
-  - WEBPACK_VERSION=4 MOCHA_VERSION=4
-  - WEBPACK_VERSION=4 MOCHA_VERSION=5
-
+- WEBPACK_VERSION=4 MOCHA_VERSION=4
+- WEBPACK_VERSION=4 MOCHA_VERSION=5
 cache: npm
 install:
-  - npm install -g @vue/cli
-  - npm install -g @vue/cli-service-global
-
+- npm install -g @vue/cli
+- npm install -g @vue/cli-service-global
 before_script:
-  - "npm install webpack@$WEBPACK_VERSION"
-  - "npm install mocha@$MOCHA_VERSION"
-  - yarn add @vue/cli-plugin-unit-mocha
-
+- npm install webpack@$WEBPACK_VERSION
+- npm install mocha@$MOCHA_VERSION
+- yarn add @vue/cli-plugin-unit-mocha
 script:
-  - yarn test:unit tests
-
+- yarn test:unit tests
 before_deploy: vue build --target wc --name data-metrics-badge 'src/components/DataMetricsBadge.vue'
 deploy:
   provider: npm
   email: kgarza@datacite.org
   api_key:
-    secure: sDv7QZYv1mkMwW7ADAudjGlEhuS9TshgqdKtfGXdsZcb9/AE7qSpO/xzrpotGdfu4Hcg3EDyrO7sJ8elbBF/0PCAMHCcaIKkw6D36uwOY8c3Sa+huDY8HXhQOHJDGNdzkBEjVQ28DzY1gBSx9Wj+HAZOp5UYnMjpRwqbSpotUP3d6lpCRCd8NspASJcgelzOW9nsUqWKyXRfm/waOGf0Pjtk3igreUJKw23FXKY4JiCNXKHAntQoOelUF1EwkhI0VXIh66j1JON8HgMv2nnxmkO3y5Ifhd5zYnelRkk1kYuUJDDKLvJdJkXkWSRx/5WANSYGE6zGP60j5LPEEbtZPjyNpejEhPBDfd3q2TLOxuLHaLyPDxvcCs0O7D5HYFUsC1vYgoZwCCfxwDCePJ4FDm/lGzsoJMd2fdr6LrUNe2XPvFEg+ScU30hWTJmDkTR3EPO+D9yNCyoY4ssmcAZR6QHCqs6HoBd875gSTg8B5SXPnE6mfzlE0HY9unwonm7XXv9e76htFnd9N3mwsZTUyOlmdLOL6tJjgzCjxgrKRhHxdMH2iNH3Y+TlxxrQh37c+07e6StcRHDer4J+OVC6TUinKSsWkND2cZeILy3itCquEedKAlYGuB6ZCu4XGYeBwJt+mBbRqoILRi8LWkQVCgnUPMesNitJyL99r5x8wN0=
+    secure: EHZ+qG1DB9VRS8Q1H43F+hjgxwxoIEPxbMz+3R5u/7/8gZss7L0FyyV9YO+h8a4ygHQNWbJAlhGRdhaXZQovURQSPwd53ClY/qvdsis/yv2T7J2ctImPobAUoFh9+HevkSk4ro0JghOhZPRY/8zpaaTIPeDhwEx4bw1ermndhugaLdO0qXtCof0kp2Z3mY0ZGPpkVMLoHXpWryfOMZgY+7madF9LCSzyxYnSnLXQt/e9lj5791dwujNx5udXeZtPHso5WIMMsVopPA/VpFbUXD28QF2jAX6cWWwd+JWPirma4/pOCz2jhl6juZ4XwyqJ6WB+zEA/x8CjLX8cAc01NBS3r7cSw/Yqh1UF52ULvKu2CaUwONMymILAd+dSQU/km3c6Uy73tqMnGIQLrx7Yp4nkG/ypQgeSJJBob5cEo7ItxtVY85y35pDCrR+pUKUqBzmrYjpilleJ/2rk+nKoCO39ZeTsuM1l/Y7m64+qTH4YNN51zeVxR7JPCeCnGGbUQFGQT9aYi/u2pVEAgB0Dc0+rJetK3cugapFNpEUYaalJjab9Sfmky+2i1tUmrn0kuYA3BhzQKxXRWH33fcJIhsp1W75Nfp1JN71iXlqGL/lJGfoEi98fBpUPkyWAF9fWUFFgD7uxmgucbwOM7/+KL+L35GxkHQMtQJcXkfTboTk=
   on:
-    repo: datacite/spitz
     branch: master
+    repo: datacite/spitz
