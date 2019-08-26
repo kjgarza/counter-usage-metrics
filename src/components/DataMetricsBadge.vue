@@ -20,7 +20,7 @@ import CounterUsageMetrics from './CounterUsageMetrics.vue'
 import DataCiteWidget from './DataCiteWidget.vue'
 
 export default {
-  name: 'DoiMetricsComponent',
+  name: 'DataMetricsBadge',
   funtional: true,
   components:{
     CounterUsageMetrics,

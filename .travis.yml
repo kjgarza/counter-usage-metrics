@@ -19,12 +19,12 @@ before_script:
 script:
   - yarn test:unit tests
 
-before_deploy: vue build --target wc 'src/components/CounterUsageMetrics.vue'
+before_deploy: vue build --target wc --name data-metrics-badge 'src/components/DataMetricsBadge.vue'
 deploy:
   provider: npm
-  email: kj.garza@gmail.com
+  email: kgarza@datacite.org
   api_key:
     secure: sDv7QZYv1mkMwW7ADAudjGlEhuS9TshgqdKtfGXdsZcb9/AE7qSpO/xzrpotGdfu4Hcg3EDyrO7sJ8elbBF/0PCAMHCcaIKkw6D36uwOY8c3Sa+huDY8HXhQOHJDGNdzkBEjVQ28DzY1gBSx9Wj+HAZOp5UYnMjpRwqbSpotUP3d6lpCRCd8NspASJcgelzOW9nsUqWKyXRfm/waOGf0Pjtk3igreUJKw23FXKY4JiCNXKHAntQoOelUF1EwkhI0VXIh66j1JON8HgMv2nnxmkO3y5Ifhd5zYnelRkk1kYuUJDDKLvJdJkXkWSRx/5WANSYGE6zGP60j5LPEEbtZPjyNpejEhPBDfd3q2TLOxuLHaLyPDxvcCs0O7D5HYFUsC1vYgoZwCCfxwDCePJ4FDm/lGzsoJMd2fdr6LrUNe2XPvFEg+ScU30hWTJmDkTR3EPO+D9yNCyoY4ssmcAZR6QHCqs6HoBd875gSTg8B5SXPnE6mfzlE0HY9unwonm7XXv9e76htFnd9N3mwsZTUyOlmdLOL6tJjgzCjxgrKRhHxdMH2iNH3Y+TlxxrQh37c+07e6StcRHDer4J+OVC6TUinKSsWkND2cZeILy3itCquEedKAlYGuB6ZCu4XGYeBwJt+mBbRqoILRi8LWkQVCgnUPMesNitJyL99r5x8wN0=
   on:
-    repo: kjgarza/counter-usage-metrics
+    repo: datacite/spitz
     branch: master

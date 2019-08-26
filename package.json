@@ -1,5 +1,5 @@
 {
-  "name": "doi-metrics-component",
+  "name": "data-metrics-badge",
   "version": "0.1.0",
   "private": false,
   "author": "Kristian Garza <kj.garza@gmail.com> (https://github.com/kjgarza)",
@@ -10,7 +10,7 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
-  "main": "dist/doi-metrics-component.min.js",
+  "main": "dist/data-metrics-badge.min.js",
   "dependencies": {
     "@babel/core": "^7.0.0-0",
     "axios": "^0.19.0",

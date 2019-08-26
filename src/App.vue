@@ -1,35 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <DoiMetricsComponent doi="10.7272/q6g15xs4" display="small"/>
+    <DataMetricsBadge doi="10.7272/q6g15xs4" display="small"/>
     <br/>
-    <DoiMetricsComponent doi="10.7272/q6g15xs4" display="medium"/>
-    <br/>
-
-    <DoiMetricsComponent doi="10.7272/q6g15xs4" display="datacite"/>
+    <DataMetricsBadge doi="10.7272/q6g15xs4" display="medium"/>
     <br/>
 
-    <DoiMetricsComponent doi="10.7272/q6g15xs4"/>
-
+    <DataMetricsBadge doi="10.7272/q6g15xs4" display="datacite"/>
     <br/>
 
-    <DoiMetricsComponent doi="10.7272/q6g15xs4" display="medium" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
+    <DataMetricsBadge doi="10.7272/q6g15xs4"/>
 
     <br/>
 
-    <DoiMetricsComponent doi="" display="small" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
+    <DataMetricsBadge doi="10.7272/q6g15xs4" display="medium" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
+
+    <br/>
+
+    <DataMetricsBadge doi="" display="small" data-input='{"views": 77, "downloads":8, "citations":244324, "crossref":500}'/>
 
   </div>
 </template>
 
 <script>
 
-import DoiMetricsComponent from './components/DoiMetricsComponent.vue'
+import DataMetricsBadge from './components/DataMetricsBadge.vue'
 
 export default {
   name: 'app',
   components: {
-    DoiMetricsComponent
+    DataMetricsBadge
   }
 }
 </script>
