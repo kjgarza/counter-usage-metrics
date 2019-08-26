@@ -1,12 +1,16 @@
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/kgarza/counter-usage-metrics)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/datacite/data-metrics-badge)
 
-[![npm version](https://badge.fury.io/js/counter-usage-metrics.svg)](https://badge.fury.io/js/counter-usage-metrics)
-[![](https://data.jsdelivr.com/v1/package/npm/counter-usage-metrics/badge)](https://www.jsdelivr.com/package/npm/counter-usage-metrics)
+[![npm version](https://badge.fury.io/js/data-metrics-badge.svg)](https://badge.fury.io/js/data-metrics-badge)
+[![](https://data.jsdelivr.com/v1/package/npm/data-metrics-badge/badge)](https://www.jsdelivr.com/package/npm/data-metrics-badge)
 
-# Counter Usage Metrics Web Component
+# Data Metrics Badge
 
-TODO: Write a project description
+The *Data Metrics Badge*  provides a open and easy way to display the number of citations and usage that your research datasets and resources have received. 
+
+The Data Metrics Badge was created as part of the [PARSEC](http://www.belmontforum.org/projects/4057/), Building New Tools for Data Sharing and Reuse through a Transnational Investigation of the Socioeconomic Impacts of Protected Areas. 
+
+The *Data Metrics Badge* is a an easy way to embed, on your repository landingpage, usage and citations metrics from DataCite Services. Usage statistics are processed accoriding to the [Code of Practice for Research Data](https://www.projectcounter.org/code-practice-research-data/). Citations stats are collected via the [DataCite and Crossref EventData Serice](https://blog.datacite.org/are-your-data-being-used-event-data-has-the-answer/). 
 
 
 ## Browsers support
@@ -15,28 +19,20 @@ TODO: Write a project description
 | --------- | --------- | --------- | --------- | --------- |
 | Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
-## Installation
 
+## Installation and Usage
 
-
-```html
-
-<script src="https://unpkg.com/vue"></script>
-<script src="https://cdn.jsdelivr.net/npm/counter-usage-metrics/dist/counter-usage-metrics.min.js"></script>
-
-```
-
-## Usage
+Getting set up with a Data Metrics Badge is a straightforward process – just add the following code to the HTML of your website, wherever you want the Data Metrics Badge to appear:
 
 
 ```html
 
 <script src="https://unpkg.com/vue"></script>
-<script src="https://cdn.jsdelivr.net/npm/counter-usage-metrics/dist/counter-usage-metrics.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/data-metrics-badge/dist/data-metrics-badge.min.js"></script>
 
 
 <body>
-  <counter-usage-metrics doi="10.7272/q6g15xs4"></counter-usage-metrics>
+  <data-metrics-badge doi="10.7272/q6g15xs4"></data-metrics-badge>
 </body>
 
 
