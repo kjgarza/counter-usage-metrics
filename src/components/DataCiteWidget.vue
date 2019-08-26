@@ -17,7 +17,6 @@
 
 <script>
 
-import ChartTimeDistribution from './ChartTimeDistribution.vue'
 import BaseWidget from './BaseWidget.vue'
 
 export default {
