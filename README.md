@@ -57,7 +57,7 @@ yarn serve
 npm run build
 
 
-yarn build --target wc --name doi-metrics-component 'src/components/DoiMetricsComponent.vue'
+yarn build --target wc --name data-metrics-badge 'src/components/DataMetricsBadge.vue'
 npm publish
 npm patch version
 ```
