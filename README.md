@@ -54,12 +54,11 @@ yarn serve
 
 ### Compiles and minifies for production
 ```
-npm run build
-
-
 yarn build --target wc --name data-metrics-badge 'src/components/DataMetricsBadge.vue'
+
 npm publish
-npm patch version
+
+npm version patch -m "Upgrade to %s for reasons"
 ```
 
 ### Run your tests
