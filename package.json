@@ -11,6 +11,9 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "main": "dist/data-metrics-badge.min.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@babel/core": "^7.0.0-0",
     "axios": "^0.19.0",

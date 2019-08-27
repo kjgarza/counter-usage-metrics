@@ -1,8 +1,8 @@
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/datacite/data-metrics-badge)
-
 [![npm version](https://badge.fury.io/js/data-metrics-badge.svg)](https://badge.fury.io/js/data-metrics-badge)
 [![](https://data.jsdelivr.com/v1/package/npm/data-metrics-badge/badge)](https://www.jsdelivr.com/package/npm/data-metrics-badge)
+[![Build Status](https://travis-ci.org/datacite/spitz.svg?branch=master)](https://travis-ci.org/datacite/spitz)
 
 # Data Metrics Badge
 
