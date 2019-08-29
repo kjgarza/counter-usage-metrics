@@ -48,7 +48,7 @@ export default {
       views: "",
       downloads: "",
       citations: "",
-      aggregations: "query_aggregations",
+      aggregations: "query_aggregations,metrics_aggregations",
       sourceId: "datacite-related,datacite-usage,datacite-crossref,crossref",
       crossref: "",
       datacite: "",
@@ -119,12 +119,13 @@ export default {
         .finally(() => this.loading = false)
     },
     reduceMetrics: function(){
-      this.views = this.metrics.doisUsageTypes[0].relationTypes[1].sum
-      this.downloads = this.metrics.doisUsageTypes[0].relationTypes[2].sum
+      this.views = this.metrics.viewsHistogram.count
+      this.downloads = this.metrics.downloadsHistogram.count
       // eslint-disable-next-line
       console.log(this.metrics)
       this.viewsDistribution = this.metrics.relationTypes[0].yearMonths
       this.citations = this.metrics.doisCitations.count
+      // this.citations = this.metrics.uniqueCitations.citations
     }
   },
   watch: {
