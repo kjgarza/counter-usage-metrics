@@ -16,7 +16,7 @@
 
 <script>
 
-import BaseWidget from './BaseWidget.vue'
+import BaseWidget from '@/models/BaseWidget.vue'
 
 export default {
   name: 'SmallWidget',
